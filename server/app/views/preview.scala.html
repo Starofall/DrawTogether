@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <img id="theImage" src="http://localhost:9000/admin/preview"/>
+        <script>
+            var newImage = new Image();
+            newImage.src = "http://localhost:9000/admin/preview";
+
+            function updateImage() {
+                console.log("update")
+                if (newImage.complete) {
+                    document.getElementById("theImage").src = newImage.src;
+                    newImage = new Image();
+                    newImage.src = "http://localhost:9000/admin/preview?time=" + new Date().getTime();;
+                }
+                setTimeout(updateImage, 100);
+            }
+            updateImage()
+        </script>
+    </body>
+</html>

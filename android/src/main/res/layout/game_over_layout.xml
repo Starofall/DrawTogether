@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_centerHorizontal="true"
+    android:padding="5dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/game_over_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/game_over_happy"
+            android:layout_gravity="center"
+            android:contentDescription="" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_social_people"
+                android:contentDescription="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:textStyle="bold"
+                android:id="@+id/player_count_over_game"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_av_repeat"
+                android:contentDescription="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="0"
+                android:textStyle="bold"
+                android:id="@+id/rounds_count_over_game" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_title"
+                android:contentDescription="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=""
+                android:textStyle="bold"
+                android:id="@+id/game_name_over_game"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/game_over_picture"
+            android:minHeight="@dimen/min_view_height"
+            android:minWidth="@dimen/min_view_width"
+            android:layout_margin="5dp"
+            android:elevation="10dp"
+            android:layout_gravity="center"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/image_boarder"/>
+    </LinearLayout>
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXIT"
+        android:textStyle="bold"
+        android:id="@+id/btn_game_over"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/primary"/>
+
+</LinearLayout>

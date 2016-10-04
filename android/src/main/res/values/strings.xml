@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">DrawTogether</string>
+    <string name="unknown_msg">unknown message</string>
+    <string name="username">username</string>
+    <string name="login_error">The email and password that you entered do not match</string>
+    <string name="local_on_recieve">localOnRecieve not specified</string>
+    <string name="login_failed">login failed :</string>
+    <string name="not_implemented_exception">not implemented </string>
+    <string name="password_check_exception">Please check your password </string>
+    <string name="join_success">i successfully joined a channel</string>
+    <string name="join_rejected">failed to join a channel</string>
+    <string name="seconds_round">Time :</string>
+    <string name="count_rounds">Rounds :</string>
+    <string name="count_player_txt">Player :</string>
+    <string name="topic_group_name">Name :</string>
+
+    <string-array name="seconds">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="rounds">
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>16</item>
+        <item>20</item>
+    </string-array>
+
+</resources>

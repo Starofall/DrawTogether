@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:checkableBehavior="single" android:title="Draw Image">
+        <menu>
+            <item
+                    android:id="@+id/nav_channel_list"
+                    android:icon="@drawable/ic_action_action_toc"
+                    android:title="Channel List"/>
+        </menu>
+    </item>
+
+    <item android:title="Finished Games">
+        <menu>
+            <item
+                    android:id="@+id/nav_user_drawings"
+                    android:icon="@drawable/ic_action_action_home"
+                    android:title="My Drawings"/>
+            <item
+                    android:id="@+id/nav_recent_drawings"
+                    android:icon="@drawable/ic_action_action_history"
+                    android:title="Recent Drawings"/>
+            <item
+                    android:id="@+id/nav_highscore"
+                    android:icon="@drawable/ic_action_action_grade"
+                    android:title="High Score"/>
+        </menu>
+    </item>
+
+    <item android:title="Account">
+        <menu>
+            <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_action_notification_dnd_forwardslash"
+                    android:title="Logout"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,124 @@
+@import drawtogether.shared.ingame.InGame.InGamePreview
+@import models.Tables._
+@import drawtogether.shared.ingame.InGame.FinishedDrawing
+@(inGames: List[InGamePreview], bestGames: Seq[FinishedDrawing], recentGames: Seq[FinishedDrawing])
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="public/css/metro.css" rel="stylesheet">
+        <script src="public/js/jquery.js"></script>
+        <script src="public/js/metro.js"></script>
+        <style>
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%
+        }
+
+        .full {
+            height: 100%
+        }
+        </style>
+    </head>
+    <body>
+        <script>
+                var imagesToAutoUpdate = []
+        </script>
+        <div class="tile-area fg-white tile-area-scheme-dark" style="height: 100%;
+            max-height: 100%">
+            <h1 class="tile-area-title">DrawTogether - Admin Panel</h1>
+            <div class="tile-area-controls">
+                @*<button class="image-button icon-right bg-transparent fg-white bg-hover-dark no-border"><span class="sub-header no-margin text-light">Sergey Pimenov</span> <span class="icon mif-user"></span></button>*@
+                @*<button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSearch')"><span class="mif-search"></span></button>*@
+                @*<button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSettings')"><span class="mif-cog"></span></button>*@
+                @*<a href="../tiles.html" class="square-button bg-transparent fg-white bg-hover-dark no-border"><span class="mif-switch"></span></a>*@
+            </div>
+
+            <div class="tile-group triple" style="left: 0px;">
+                <span class="tile-group-title">Running Games</span>
+
+                <div class="tile-container">
+                    @for(game <- inGames) {
+                        <div class="tile">
+                            <div class="tile-content slide-up">
+                                <div class="slide">
+                                    <img id="@game.gameId" src="@routes.MainController.preview(game.gameId)">
+                                    <script>
+                                        imagesToAutoUpdate.push("@game.gameId")
+                                    </script>
+                                </div>
+                                <div class="slide-over text-small  op-orange padding10">
+                                    <p>Title: @game.gameSettings.title</p>
+                                    <p>Round: @game.currentRound of @game.gameSettings.totalRounds</p>
+                                    <p>Seconds/Round: @game.gameSettings.secondsPerRound</p>
+                                    <p>Players: @game.playerCount of 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tile-group triple" style="left: 0px;">
+                <span class="tile-group-title">Recent Games</span>
+                <div class="tile-container">
+                @for(game <- recentGames) {
+                    <div class="tile">
+                        <div class="tile-content slide-up">
+                            <div class="slide">
+                                <img src="@routes.MainController.finished(game.gameId)">
+                            </div>
+                            <div class="slide-over text-small  op-orange padding10">
+                                <p>Title: @game.gameSettings.title</p>
+                                <p>Rounds: @game.gameSettings.totalRounds</p>
+                                <p>Seconds/Round: @game.gameSettings.secondsPerRound</p>
+                                <p>Stars: @game.stars</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                </div>
+            </div>
+            <div class="tile-group triple" style="left: 0px;">
+                <span class="tile-group-title">Best Games</span>
+                <div class="tile-container">
+                @for(game <- bestGames) {
+                    <div class="tile">
+                        <div class="tile-content slide-up">
+                            <div class="slide">
+                                <img src="@routes.MainController.finished(game.gameId)">
+                            </div>
+                            <div class="slide-over text-small  op-orange padding10">
+                                <p>Title: @game.gameSettings.title</p>
+                                <p>Rounds: @game.gameSettings.totalRounds</p>
+                                <p>Seconds/Round: @game.gameSettings.secondsPerRound</p>
+                                <p>Stars: @game.stars</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                </div>
+            </div>
+        </div>
+        <script>
+            var newImage = {};
+            for (i = 0; i < imagesToAutoUpdate.length; i++) {
+                var imageId = imagesToAutoUpdate[i];
+                newImage[imageId] = new Image();
+                newImage[imageId].src = "http://localhost:9000/admin/preview/" + imageId;
+            }
+            function updateImage() {
+                for (i = 0; i < imagesToAutoUpdate.length; i++) {
+                    if (newImage[imageId].complete) {
+                        document.getElementById(imageId).src = newImage[imageId].src;
+                        newImage[imageId] = new Image();
+                        newImage[imageId].src = "http://localhost:9000/admin/preview/" + imageId + "?time=" + new Date().getTime();
+                    }
+                }
+                setTimeout(updateImage, 1000);
+            }
+            updateImage()
+        </script>
+    </body>
+</html>

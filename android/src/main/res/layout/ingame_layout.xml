@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_alignParentTop="true"
+              android:background="#FFFFFF"
+              android:layout_centerHorizontal="true"
+              android:id="@+id/ingame_main_layout"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:backgroundTint="#000000"
+            android:backgroundTintMode="add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/ingame_color_btn"
+                android:src="@drawable/ic_editor_format_paint"/>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_content_gesture"
+                        android:layout_marginLeft="10dp"/>
+
+                <SeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ingame_size_seek"
+                        android:progress="50"
+                        android:max="100"
+                        android:mirrorForRtl="false"
+                        android:nestedScrollingEnabled="false"
+                        android:splitTrack="false"
+                        android:indeterminate="false"
+                        android:indeterminateOnly="false"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/ingame_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="#c7c7c7"
+            android:padding="1dp"
+            android:cropToPadding="false"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_av_repeat"
+                android:contentDescription="" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="00"
+                android:id="@+id/ingame_round_number" />
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView2"
+                android:src="@drawable/ic_action_alarm"
+                android:contentDescription=""/>
+
+        <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ingame_timer"
+                android:max="100"
+                android:progress="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/ic_social_people"/>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="You"
+                    android:enabled="false"
+                    android:focusable="false"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                    android:id="@+id/ingame_player_1"/>
+            <Space
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player 1"
+                    android:enabled="false"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                    android:id="@+id/ingame_player_2"/>
+            <Space
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player 2"
+                    android:enabled="false"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                    android:id="@+id/ingame_player_3"/>
+
+            <Space
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Playerwithlong"
+                    android:enabled="false"
+                    style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                    android:layout_gravity="top"
+                    android:id="@+id/ingame_player_4"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_title"
+            android:contentDescription="" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:gravity="center"
+            android:singleLine="true"
+            android:id="@+id/game_title_ingame"/>
+    </LinearLayout>
+
+</LinearLayout>

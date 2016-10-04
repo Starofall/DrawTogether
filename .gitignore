@@ -1,0 +1,10 @@
+.idea/*
+android/target/
+project/project/target/
+project/target/
+server/target/
+shared/target/
+target/
+server/logs/
+captures/
+storage/
